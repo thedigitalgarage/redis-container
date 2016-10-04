@@ -2,10 +2,7 @@ Redis Docker image
 ====================
 
 This container image includes Dockerfile for Redis 3.2 Docker image.
-Users can choose between RHEL and CentOS based images.
 
-Dockerfile for CentOS is called Dockerfile, Dockerfile for RHEL is called
-Dockerfile.rhel7.
 
 Environment variables and volumes
 ----------------------------------
@@ -29,12 +26,12 @@ matches the user UID or name which is running inside the container.**
 Usage
 ---------------------------------
 
-For this, we will assume that you are using the `rhscl/redis-32-rhel7` image.
+For this, we will assume that you are using the `thedigitalgarage/redis-32-centos7` image.
 If you want to set only the mandatory environment variables and not store
 the database in a host directory, execute the following command:
 
 ```
-$ docker run -d --name redis_database 6379:6379 rhscl/redis-32-rhel7
+$ docker run -d --name redis_database 6379:6379 thedigitalgarage/redis-32-centos7
 ```
 
 This will create a container named `redis_database`. Port 6379 will be exposed and mapped
@@ -47,7 +44,7 @@ For protecting Redis data by a password, pass `REDIS_PASSWORD` environment varia
 to the container like this:
 
 ```
-$ docker run -d --name redis_database -e REDIS_PASSWORD=strongpassword rhscl/redis-32-rhel7
+$ docker run -d --name redis_database -e REDIS_PASSWORD=strongpassword thedigitalgarage/redis-32-centos7
 ```
 
 **Warning: since Redis is pretty fast an outside user can try up to
